@@ -1,0 +1,19 @@
+services:
+  grobid:
+    image: lfoppiano/grobid:0.8.1
+    ports:
+      - "8070:8070"
+    ulimits:
+      core: 0
+    init: true
+    restart: unless-stopped
+
+  python-app:
+    build:
+      context: ./python-app
+    volumes:
+      - ./python-app:/app
+    depends_on:
+      - grobid
+    command: python main.py
+    restart: unless-stopped
