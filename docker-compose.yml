@@ -7,6 +7,8 @@ services:
       core: 0
     init: true
     restart: unless-stopped
+    healthcheck:
+      disable: true
 
   python-app:
     build:
@@ -15,5 +17,7 @@ services:
       - ./python-app:/app
     depends_on:
       - grobid
+    environment:
+      - GROBID_URL=http://grobid:8070
     command: python main.py
     restart: unless-stopped
