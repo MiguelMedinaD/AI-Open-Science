@@ -7,6 +7,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el script principal
-COPY main.py .
+# COPY keyword_cloud_generator.py .
 
 # El contenedor se ejecutará con el comando definido en el docker-compose

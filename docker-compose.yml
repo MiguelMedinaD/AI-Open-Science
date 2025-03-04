@@ -21,5 +21,6 @@ services:
     environment:
       - GROBID_URL=http://grobid:8070
       - PDF_FOLDER=/app/pdfs
-    command: python main.py
+    # Se ejecuta primero tests.py; si finaliza con éxito, se continúa con main.py
+    command: /bin/sh -c "python tests.py && python keyword_cloud_generator.py"
     restart: unless-stopped
