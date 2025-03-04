@@ -48,8 +48,6 @@ def process_pdf_generate_keyword_cloud(pdf_path, base_url, output_folder):
             response = requests.post(url, files=files)
         if response.status_code == 200:
             response_text = response.text
-            # print("Respuesta de Grobid:")
-            # print(response_text)
             
             # Guarda el TEI XML en un archivo
             tei_output_path = os.path.join(output_folder, "tei.xml")
@@ -67,7 +65,6 @@ def process_pdf_generate_keyword_cloud(pdf_path, base_url, output_folder):
             
             if abstract_text:
                 print("Texto del abstract extraído.")
-                # print(abstract_text)
                 generate_keyword_cloud(abstract_text, output_folder)
             else:
                 print("No se pudo extraer el abstract.")
@@ -81,8 +78,9 @@ def main():
     """
     Procesa todos los archivos PDF en el directorio definido por PDF_FOLDER.
     Para cada PDF se crea una carpeta (con el mismo nombre del archivo sin extensión)
-    donde se guardan los resultados: el TEI XML y la imagen de la keyword cloud.
-    Si ya existen ambos archivos, se omite el procesamiento para ese PDF.
+    y dentro de ella se crea la carpeta 'keyword_cloud', donde se guardan los resultados:
+    el TEI XML y la imagen de la keyword cloud.
+    Si ya existen ambos archivos en dicha carpeta, se omite el procesamiento para ese PDF.
     """
     base_url = os.environ.get("GROBID_URL", "http://grobid:8070")
     pdf_folder = os.environ.get("PDF_FOLDER", "/app/pdfs")
@@ -95,9 +93,9 @@ def main():
     for pdf_file in pdf_files:
         pdf_path = os.path.join(pdf_folder, pdf_file)
         base_name = os.path.splitext(pdf_file)[0]
-        output_folder = os.path.join(pdf_folder, base_name)
+        # Se crea la carpeta 'keyword_cloud' dentro de la carpeta del PDF
+        output_folder = os.path.join(pdf_folder, base_name, "keyword_cloud")
         
-        # Verifica si ya se han generado los archivos de salida
         tei_file = os.path.join(output_folder, "tei.xml")
         keyword_cloud_file = os.path.join(output_folder, "keyword_cloud.png")
         if os.path.exists(tei_file) and os.path.exists(keyword_cloud_file):
