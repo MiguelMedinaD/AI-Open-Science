@@ -15,9 +15,11 @@ services:
       context: ./python-app
     volumes:
       - ./python-app:/app
+      - ./pdfs:/app/pdfs
     depends_on:
       - grobid
     environment:
       - GROBID_URL=http://grobid:8070
+      - PDF_FOLDER=/app/pdfs
     command: python main.py
     restart: unless-stopped
