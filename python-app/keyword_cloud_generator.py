@@ -4,6 +4,7 @@ import re
 import requests
 import xml.etree.ElementTree as ET
 from wordcloud import WordCloud
+import sys
 
 def generate_keyword_cloud(text, output_folder):
     """Genera una nube de palabras a partir del texto del abstract y la guarda como 'keyword_cloud.png'."""
@@ -109,3 +110,6 @@ def main():
 if __name__ == "__main__":
     print("Ejecutando archivo keyword_cloud_generator.py")
     main()
+    print("Ejecutando los siguientes archivos, espere...")
+    sys.exit(0)
+

@@ -47,16 +47,19 @@ if __name__ == "__main__":
     i = 0
     delay = 10
     while not run_tester():
-
+        print(f"{'-' * 20}")
         print(f"Intento {i+1}: Comprobando endpoints de la API...")
         i = i + 1
 
-        print(f"{'-' * 20} \nError en las pruebas unitarias.\n{'-' * 20}")
+        print(f" \nError en las pruebas unitarias.\n") 
 
         print(f"Esperando {delay} segundos antes del siguiente intento...\n")
+        print(f"{'-' * 20}")
 
         time.sleep(delay)
 
+    print(f"{'-' * 20}")
     print("Pruebas unitarias completadas exitosamente.")
-    print("Ejecutando los siguientes archivos, espere...")
+    print(f"{'-' * 20}")
+    print(f"\n Ejecutando los siguientes archivos, espere...\n")
     sys.exit(0)
