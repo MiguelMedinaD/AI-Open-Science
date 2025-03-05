@@ -45,9 +45,11 @@ def generate_figures_summary(pdf_folder, output_image_path):
     Recorre cada PDF del directorio pdf_folder, busca el archivo tei.xml en su subcarpeta 'pdf_full_text_document'
     y cuenta el número de figuras. Luego, genera un gráfico de barras con el número de figuras por artículo (usando
     el nombre base del PDF como etiqueta) y lo guarda en output_image_path.
+    Se ordenan alfabéticamente los artículos para que la asociación sea correcta.
     """
     results = {}
-    for filename in os.listdir(pdf_folder):
+    # Ordenar los archivos PDF para tener un orden consistente
+    for filename in sorted(os.listdir(pdf_folder)):
         if filename.lower().endswith(".pdf"):
             base_name = os.path.splitext(filename)[0]
             tei_path = os.path.join(pdf_folder, base_name, "pdf_full_text_document", "tei.xml")
@@ -58,7 +60,8 @@ def generate_figures_summary(pdf_folder, output_image_path):
                 print(f"No se encontró tei.xml para {filename} en la ruta esperada.")
     
     if results:
-        articles = list(results.keys())
+        # Ordenar los artículos alfabéticamente
+        articles = sorted(results.keys())
         counts = [results[a] for a in articles]
         plt.figure(figsize=(max(6, len(articles)*1.5), 6))
         plt.bar(articles, counts, color='green')
@@ -77,7 +80,7 @@ def main():
     base_url = os.environ.get("GROBID_URL", "http://grobid:8070")
     pdf_folder = os.environ.get("PDF_FOLDER", "/app/pdfs")
     
-    pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith(".pdf")]
+    pdf_files = sorted([f for f in os.listdir(pdf_folder) if f.lower().endswith(".pdf")])
     if not pdf_files:
         print(f"No se encontraron archivos PDF en el directorio {pdf_folder}.")
         return
@@ -102,5 +105,5 @@ def main():
 if __name__ == "__main__":
     print("Ejecutando archivo figures_visualization_generator.py")
     main()
-    print("Ejecutando los siguientes archivos, espere...")
+    print("Ejecución completada.")
     sys.exit(0)
