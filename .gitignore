@@ -4,7 +4,5 @@ pdfs/*
 # Ignorar todo el contenido de la carpeta 'pdfs' dentro de 'python-app'
 python-app/pdfs/*
 
-# (Opcional) Si deseas mantener las carpetas vacías en el repositorio,
-# crea un archivo .gitkeep (o similar) dentro de cada carpeta y descoméntalo:
+# Crea un archivo .gitkeep (o similar) dentro de cada carpeta para mantenerla vacia:
 !pdfs/.gitkeep
-# !python-app/pdfs/.gitkeep

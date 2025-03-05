@@ -105,5 +105,5 @@ def main():
 if __name__ == "__main__":
     print("Ejecutando archivo figures_visualization_generator.py")
     main()
-    print("Ejecución completada.")
+    print("Ejecutando los siguientes archivos, espere...")
     sys.exit(0)
