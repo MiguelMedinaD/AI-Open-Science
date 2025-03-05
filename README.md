@@ -5,8 +5,13 @@ Este proyecto de Miguel Medina utiliza Docker y Grobid para procesar archivos PD
 ---
 
 ## Requisitos Previos
-
+Tener instalados los siguientes programas:
 - [Git](https://git-scm.com/)
+  *Para verificar que Docker está instalado, abre la consola y ejecuta:*
+  ```bash
+   git -v
+   ```
+  *Si no lo tienes instalado, sigue las instrucciones en [Git download](https://git-scm.com/downloads).*
 - [Docker](https://docs.docker.com/get-docker/)  
   *Para verificar que Docker está instalado, abre la consola y ejecuta:*
   ```bash
