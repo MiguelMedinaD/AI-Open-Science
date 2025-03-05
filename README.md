@@ -1,6 +1,6 @@
 # AI-Open-Science
 
-Este proyecto utiliza Docker y Grobid para procesar archivos PDF y extraer información relevante, como nubes de palabras, visualizaciones de figuras y listas de enlaces. Los resultados se generan a través de varios scripts que se ejecutan secuencialmente en contenedores Docker.
+Este proyecto de Miguel Medina utiliza Docker y Grobid para procesar archivos PDF y extraer información relevante, como nubes de palabras, visualizaciones de figuras y listas de enlaces. Los resultados se generan a través de varios scripts que se ejecutan secuencialmente en contenedores Docker.
 
 ---
 
@@ -54,6 +54,10 @@ El proyecto se ejecuta a través de Docker Compose y realiza las siguientes oper
 ### Pasos para ejecutar el proyecto:
 
 1. **Construir y levantar los contenedores**  
+   Abra la consola si la ha cerrado y situese dentro de la carpeta del repositorio clonado:
+   ```bash
+   cd ruta/AI-Open-Science
+   ```
    Ejecuta el siguiente comando para construir y ejecutar todos los servicios:
    ```bash
    docker-compose up --build
