@@ -99,4 +99,3 @@ El proyecto se ejecuta a través de Docker Compose y realiza las siguientes oper
 ---
 
 ¡Disfruta usando AI-Open-Science y descubre todo lo que puedes extraer de tus PDFs con Grobid!
-```
