@@ -14,7 +14,7 @@ Este proyecto utiliza Docker y Grobid para procesar archivos PDF y extraer infor
   docker --version
   ```
   *Si no lo tienes instalado, sigue las instrucciones en [Get Docker](https://docs.docker.com/get-started/get-docker/).*
-
+```
 ---
 
 ## Instalación y Configuración
@@ -24,15 +24,20 @@ Este proyecto utiliza Docker y Grobid para procesar archivos PDF y extraer infor
    ```bash
    git clone https://github.com/MiguelMedinaD/AI-Open-Science.git
    ```
+   Si desea continuar no cierre la consola
 
 2. **Prepara los archivos PDF**  
    Guarda los PDFs que deseas procesar en la carpeta `pdfs` que se encuentra en la raíz del repositorio clonado.  
    *Asegúrate de que la carpeta `pdfs` contenga tus archivos y no esté vacía.*
 
 3. **Ubícate en la carpeta del repositorio**  
-   Abre la consola y sitúate en la carpeta del repositorio clonado:
+   Vuelve a la consola y sitúate en la carpeta del repositorio clonado:
    ```bash
    cd AI-Open-Science
+   ```
+   En caso de que haya cerrado la consola situate en el directorio de la carpeta con su ruta completa:
+   ```bash
+   cd ruta/AI-Open-Science
    ```
 
 ---
