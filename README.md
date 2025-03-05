@@ -1,4 +1,3 @@
-```markdown
 # AI-Open-Science
 
 Este proyecto utiliza Docker y Grobid para procesar archivos PDF y extraer información relevante, como nubes de palabras, visualizaciones de figuras y listas de enlaces. Los resultados se generan a través de varios scripts que se ejecutan secuencialmente en contenedores Docker.
@@ -11,10 +10,10 @@ Este proyecto utiliza Docker y Grobid para procesar archivos PDF y extraer infor
 - [Docker](https://docs.docker.com/get-docker/)  
   *Para verificar que Docker está instalado, abre la consola y ejecuta:*
   ```bash
-  docker --version
-  ```
+   docker --version
+   ```
   *Si no lo tienes instalado, sigue las instrucciones en [Get Docker](https://docs.docker.com/get-started/get-docker/).*
-```
+
 ---
 
 ## Instalación y Configuración
