@@ -8,7 +8,7 @@ Este documento explica cómo se han validado las respuestas y salidas generadas 
 
 - **Pruebas Iniciales:**  
   Se utiliza el script `tester_inicial.py` para validar que los endpoints clave de Grobid funcionen correctamente. En concreto, se comprueba que:
-  - El endpoint `/api/version` retorne la versión esperada (por ejemplo, "0.8.1").
+  - El endpoint `/api/version` retorne la versión esperada (en este caso, "0.8.1").
   - El endpoint `/api/isalive` retorne "true".
   
   **Método de validación:**  
@@ -22,8 +22,8 @@ Este documento explica cómo se han validado las respuestas y salidas generadas 
 
 - **Script:** `keyword_cloud_generator.py`  
 - **Salidas Validadas:**  
-  - Se genera un archivo TEI XML (`tei.xml`) en la subcarpeta `keyword_cloud` para cada PDF.
-  - Se genera una imagen (`keyword_cloud.png`) que contiene la nube de palabras extraída del abstract del documento.
+  - Se genera un archivo TEI XML (`tei.xml`) en la subcarpeta `keyword_cloud` para cada PDF usando el endpoint `/api/processHeaderDocument`.
+  - Se genera una imagen (`keyword_cloud.png`) que contiene la nube de palabras extraída del abstract del documento con la libreria `wordcloud`.
   
   **Método de validación:**  
   - Se realizaron ejecuciones con varios PDFs de ejemplo y se inspeccionaron visualmente los resultados.
@@ -35,7 +35,7 @@ Este documento explica cómo se han validado las respuestas y salidas generadas 
 
 - **Script:** `figures_visualization_generator.py`  
 - **Salidas Validadas:**  
-  - Se guarda el TEI XML en una subcarpeta llamada `pdf_full_text_document` para cada PDF.
+  - Se guarda el TEI XML en una subcarpeta llamada `pdf_full_text_document` para cada PDF usando el endpoint `/api/processFulltextDocument`.
   - Se cuenta el número de elementos `<figure>` (usando el namespace TEI) de forma precisa.
   - Se genera un gráfico de barras (`figures_in_articles.png`) en la carpeta raíz de los PDFs, donde cada barra muestra el número de figuras de cada artículo.
   
