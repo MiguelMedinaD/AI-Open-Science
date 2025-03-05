@@ -6,5 +6,5 @@ python-app/pdfs/*
 
 # (Opcional) Si deseas mantener las carpetas vacías en el repositorio,
 # crea un archivo .gitkeep (o similar) dentro de cada carpeta y descoméntalo:
-# !pdfs/.gitkeep
+!pdfs/.gitkeep
 # !python-app/pdfs/.gitkeep
